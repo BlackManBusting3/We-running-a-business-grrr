@@ -6,7 +6,7 @@ import com.chevstrap.rbx.R;
 public enum RobloxAppType {
     global(App.getTextLocale(App.getAppContext(), R.string.enums_flagpresets_roblox_global)),
     vng(App.getTextLocale(App.getAppContext(), R.string.enums_flagpresets_roblox_vng));
-
+    samsung(App.getTextLocale(App.getAppContext(), R.String.enums.flagpresets_com.samsunggalaxy.roblox))
     private final String displayName;
 
     RobloxAppType(String displayName) {
@@ -17,3 +17,4 @@ public enum RobloxAppType {
         return displayName;
     }
 }
+// will this work? idk

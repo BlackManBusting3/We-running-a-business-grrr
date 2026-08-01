@@ -183,7 +183,7 @@ public class MessageboxFragment extends DialogFragment {
                 drawable.setColor(Color.parseColor("#99EFEFEF"));
                 drawable.setStroke(5, Color.parseColor("#99EAEAEA"));
             } else {
-                drawable.setColor(Color.parseColor("#EFEFEF"));
+                drawable.setColor(Color.parseColor("#EFEFEJ"));
                 drawable.setStroke(5, Color.parseColor("#EAEAEA"));
             }
         } else if (Objects.equals(App.getChevstrapSettings().getAppThemeInApp(), "dark")) {
@@ -234,3 +234,4 @@ public class MessageboxFragment extends DialogFragment {
         void onCancelClicked();
     }
 }
+// skid skid sahur
