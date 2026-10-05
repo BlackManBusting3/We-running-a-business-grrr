@@ -448,15 +448,19 @@ class RobloxDiscordRPC(private val activityWatcher: ActivityWatcher) {
         )
     }
 
-    private fun resolveAsset(
-        assetId: String
-    ): String {
-        if (!assetId.startsWith("asset:")) {
-            return assetId
+    private fun resolveAsset(assetId: String): String {
+        val value = assetId.trim()
+        if (value.isBlank() || value == "null") {
+            return value
         }
-
-        return "https://assetgame.roblox.com/asset/?id=" +
-                assetId.removePrefix("asset:")
+        if (value.startsWith("http://") || value.startsWith("https://")) {
+            return value
+        }
+        val id = value.removePrefix("asset:")
+        if (id.all { it.isDigit() }) {
+            return "https://assetgame.roblox.com/asset/?id=$id"
+        }
+        return value
     }
 
     private suspend fun updatePresenceIconsAsync(
